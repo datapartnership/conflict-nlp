@@ -6,8 +6,6 @@ parts:
     numbered: True
     chapters:
       - file: notebooks/conflict.ipynb
-      - file: notebooks/protest-classification-bert.ipynb
-      - file: notebooks/protest-classification-gpt.ipynb
       - file: notebooks/protest-classification.ipynb
       - file: notebooks/protests_in_iran.ipynb
   - caption: Recommended Workflows
