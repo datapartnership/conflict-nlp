@@ -68,7 +68,7 @@ The **C_V coherence metric** evaluates how semantically consistent the top words
 
 **Formula:**
 ```
-Coherence_CV = (1 / (N choose 2)) * Σ cosine_similarity(v_wi, v_wj)
+CV_Coherence = (1 / (N choose 2)) * Σ cosine_similarity(v_wi, v_wj)
 ```
 Where:
 - `v_wi` and  `v_wj` are the context vectors of word `wi` and `wj`
