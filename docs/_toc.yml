@@ -8,6 +8,14 @@ parts:
       - file: notebooks/conflict.ipynb
       - file: notebooks/protest-classification.ipynb
       - file: notebooks/protests_in_iran.ipynb
+  - caption: Saniya Shinde
+    numbered: True
+    chapters: 
+    - file: docs/lda-readme.md
+    - file: notebooks/protest-classification-lda.ipynb
+    - file: docs/bertopic-readme.md
+    - file: notebooks/protest-classification-bertopic.ipynb
+
   - caption: Recommended Workflows
     chapters:
       - file: docs/folders-and-naming
