@@ -115,4 +115,4 @@ Using both metrics gives a balanced evaluation:
 # 2. Install dependencies:
 pip install pandas gensim nltk matplotlib pyLDAvis wordcloud
 # 3. Run notebook:
-jupyter notebook lda_topic_modeling.ipynb
+jupyter notebook protests-classification-lda.ipynb
