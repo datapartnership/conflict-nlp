@@ -22,17 +22,21 @@ To discover and interpret themes in protest narratives using LDA by tuning model
 ## Methodology
 
 1. **Data Loading:** Load the ACLED protest dataset for Iran using `pandas`, selecting the `notes` column.
+
 2. **Text Preprocessing:**
 -  Convert notes to lowercase to normalize casing.
 - Tokenize using `simple_preprocess`,  which removes punctuation and splits sentences into word tokens.
 - Remove standard and domain-specific stopwords (e.g., month names, "plan", "building") which appear frequently but didn’t add topic-specific value.
 - Remove short words (length ≤ 2) to reduce noise.
 - The resulting output is a list of tokenized and cleaned words for each protest note.
+
 3. **Exploratory Visualization:** Generate a word cloud using token frequencies to verify that preprocessing removed noisy/common terms and retained relevant keywords.
+
 4. **Dictionary and Corpus Creation:**
 - Build a dictionary using `corpora.Dictionary`.
 - Filter extremes: remove tokens in <5 docs or >30% of docs to remove rare and overly common words to reduce noise.
 - Transform each document into a bag-of-words representation using doc2bow.
+
 5. **Model Optimization and Grid Search:**
    1. Initially, the model is run with topic numbers ranging from 5 to 10 to evaluate performance across different granularities. Based on coherence scores, the best performance is observed with 5 topics, which is then used for the final grid search over alpha and eta values.
    2. Loop through combinations of `alpha` and `eta` values.
@@ -41,9 +45,10 @@ To discover and interpret themes in protest narratives using LDA by tuning model
     - update_every=0: batch learning
     - chunksize=5000: controls how many documents are processed at a time
    4. Evaluate each using coherence (`c_v coherence metric`) and select the best.
-6. **Topic Diversity Evaluation:** 
-- For the best model, compute topic diversity using the top 10 words for each topic.
-7. **Visualization:**
+
+6. **Topic Diversity Evaluation:** For the best model, compute topic diversity using the top 10 words for each topic.
+
+7.  **Visualization:**
    - Top 10 words per topic (bar charts).
    - Document-topic match table (10 samples).
    - Topic probability distribution (2 documents).
@@ -61,12 +66,12 @@ The **C_V coherence metric** evaluates how semantically consistent the top words
 
 *Intuition:* If the top words in a topic tend to co-occur in similar contexts, the topic is considered coherent.
 
-**Formula (conceptual):**
+**Formula:**
 ```
 Coherence_CV = (1 / (N choose 2)) * Σ cosine_similarity(v_wi, v_wj)
 ```
 Where:
-- `v_wi` is the context vector of word `wi`
+- `v_wi` and  `v_wj` are the context vectors of word `wi` and `wj`
 - `N` is the number of top words per topic
 
 **Tool:** Implemented in `gensim.models.CoherenceModel` with `coherence='c_v'`  
@@ -84,6 +89,7 @@ Topic Diversity = |Unique Top Words| / (k × T)
 Where:
 - `k` = number of top words per topic (e.g., 10)
 - `T` = total number of topics
+- Numerator is the number of unique words found in the top k words across all topics.
 
 **Scale:**
 - 1.0 means all topics have completely distinct top words
