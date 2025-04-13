@@ -11,11 +11,12 @@ parts:
   - caption: Saniya Shinde
     numbered: True
     chapters: 
+    - caption: Latent Dirichlet Allocation(LDA)
     - file: docs/lda-readme.md
     - file: notebooks/protest-classification-lda.ipynb
-    - file: docs/bertopic-readme.md
-    - file: notebooks/protest-classification-bertopic.ipynb
-
+    - caption: Bertopic
+    - caption: Mistral
+  
   - caption: Recommended Workflows
     chapters:
       - file: docs/folders-and-naming
