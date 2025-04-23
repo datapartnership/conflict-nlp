@@ -15,7 +15,11 @@ parts:
     - file: docs/lda-readme.md
     - file: notebooks/protest-classification-lda.ipynb
     - caption: Bertopic
+    - file: docs/bertopic-readme.md
+    - file: notebooks/protest-classification-bertopic.ipynb
     - caption: Mistral
+    - file: docs/mistral-readme.md
+    - file: notebooks/protest-classification-mistral.ipynb
   
   - caption: Recommended Workflows
     chapters:
