@@ -8,6 +8,15 @@ parts:
       - file: notebooks/conflict.ipynb
       - file: notebooks/protest-classification.ipynb
       - file: notebooks/protests_in_iran.ipynb
+  - caption: Protest Topic Modeling
+    numbered: True
+    chapters:
+      - caption: Top2Vec
+      - file: docs/top2vec_TopicModeling_protest_analysis-readme.md
+      - file: notebooks/top2vec_TopicModeling_protest_analysis.ipynb
+      - caption: BERTopic + LLaMA 2
+      - file: docs/LLaMA2_TopicModeling_protest_analysis-readme.md
+      - file: notebooks/LLaMA2_TopicModeling_protest_analysis.ipynb
   - caption: Recommended Workflows
     chapters:
       - file: docs/folders-and-naming
